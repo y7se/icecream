@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<meta name="Description" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="css/comm.css">
+	<link rel="stylesheet" href="css/center.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="page-scroll">
+		<div class="page-center">
+			<a href="javascript:history.back(-1)" class="back-btn">返回制作<i class="back-icon"></i></a>
+			<!-- 我的冰淇淋 -->
+			<p class="main-num">我已完成<span class="num">0</span>套冰淇淋</p>
+			<div class="main-item">
+				<div class="item item01">
+					<p class="title">蛋卷冰淇淋</p>
+					<p class="num">0</p>
+				</div>
+				<div class="item item02">
+					<p class="title">甜筒冰淇淋</p>
+					<p class="num">0</p>
+				</div>
+				<div class="item item03">
+					<p class="title">圣代冰淇淋</p>
+					<p class="num">0</p>
+				</div>
+				<div class="item item04">
+					<p class="title">冰风暴冰淇淋</p>
+					<p class="num">0</p>
+				</div>
+			</div>
+			<!-- 赠送按钮 -->
+			<a href="javascript:" class="center-btn-give" id="giveBtn"></a>
+			<!-- 索要按钮 -->
+			<a href="javascript:" class="center-btn-send" id="sendBtn"></a>
+			<!-- 我的记录 -->
+			<div class="center-record-box">
+				<ul class="record-item" id="recordItem">
+					<li>
+						<div class="portrait"><img src="https://wx.qlogo.cn/mmopen/vi_32/h6fUANhU6SnFReXQYlmhdLDxicwKvLg6r1F8AIBPZTzgMIFyXFOTd9vqoesysKn3zOXrO76ibHkDkia3HObqDrSIA/132"></div>
+						<div class="info">
+							<p class="title">微信昵称</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">赠送你1个冰淇淋</p>
+					</li>
+					<li class="reduce">
+						<div class="info">
+							<p class="title">赠送好友</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">-1个冰淇淋</p>
+					</li>
+					<li>
+						<div class="info">
+							<p class="title">微信制作冰淇淋</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">1个冰淇淋</p>
+					</li>
+					<li class="reduce">
+						<div class="info">
+							<p class="title">抽奖扣除冰淇淋</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">-6个冰淇淋</p>
+					</li>
+					<li>
+						<div class="info">
+							<p class="title">APP制作冰淇淋</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">1个冰淇淋</p>
+					</li>
+					<li class="reduce">
+						<div class="info">
+							<p class="title">抽奖扣除冰淇淋</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">-6个冰淇淋</p>
+					</li>
+					<li>
+						<div class="info">
+							<p class="title">APP制作冰淇淋</p>
+							<p class="time">2018-01-21 21:43:55</p>
+						</div>
+						<p class="type">1个冰淇淋</p>
+					</li>
+				</ul>
+				<p class="record-prompt" style="display: none;">暂无记录</p>
+				<div class="scroll-plan" style="display: none;"><i></i></div>
+			</div>
+			<!-- 赚取和微币 -->
+			<a href="javascript:" class="center-btn-bottom01" id="coinTaskBtn"></a>
+			<!-- 抽大奖 -->
+			<a href="award.html" class="center-btn-bottom02"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 弹窗-做任务赚取和微币 -->
+<div class="pop-mask" id="popCoinTask" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">完成任务即可获得和微币</h1>
+		<div class="pop-task-item">
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+		</div>
+		<p class="pop-task-prompt">每天首次进入“一键检测、话费账单、套餐余额”分别增加以上和微币</p>
+	</div>
+</div>
+
+<!-- 弹窗-赠送 -->
+<div class="pop-mask" id="popGive" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">请选择赠送的冰淇淋</h1>
+		<div class="pop-give-item">
+			<a href="javascript:" class="give-btn item01 usable active">
+				<p class="num">5</p>
+			</a>
+			<a href="javascript:" class="give-btn item02 usable">
+				<p class="num">5</p>
+			</a>
+			<a href="javascript:" class="give-btn item03 usable">
+				<p class="num">5</p>
+			</a>
+			<a href="javascript:" class="give-btn item04">
+				<p class="num">0</p>
+			</a>
+		</div>
+		<a href="javascript:" class="pop-btn01 pop-give-btn">赠送</a>
+	</div>
+</div>
+
+<!-- 弹窗-索要 -->
+<div class="pop-mask" id="popSend" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">请选择索要的冰淇淋</h1>
+		<div class="pop-send-item">
+			<a href="javascript:" class="send-btn item01 usable active"></a>
+			<a href="javascript:" class="send-btn item02 usable"></a>
+			<a href="javascript:" class="send-btn item03 usable"></a>
+			<a href="javascript:" class="send-btn item04"></a>
+		</div>
+		<a href="javascript:" class="pop-btn01 pop-send-btn">索要</a>
+	</div>
+</div>
+
+
+
+<!-- 弹窗-分享提示 -->
+<div class="pop-mask" id="popShare" style="display: none;">
+	<a href="javascript:" class="pop-share pop-hide"></a>
+</div>
+
+<script type="text/javascript" src="https://fun.mail.10086.cn/wap/common/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/comm.js"></script>
+<script type="text/javascript">
+// 处理滚动
+scrollInit({
+	object: $('#recordItem')
+});
+// 赚取和微币
+$('#coinTaskBtn').on('click', function() {
+	var popTaskObj = $('#popCoinTask');
+	popShow({
+		object: popTaskObj,
+		success: function() {
+			popTaskObj.find('.task-btn').unbind().on('click', function() {
+				// 点击做任务
+			})
+		}
+	});
+});
+
+// 赠送
+$('#giveBtn').on('click', function() {
+	var popTaskObj = $('#popGive');
+	popShow({
+		object: popTaskObj,
+		success: function() {
+			var mainId = 0; // 赠送冰淇淋id
+			popTaskObj.find('.give-btn').unbind().on('click', function() {
+				// 选择赠送的冰淇淋
+				var _this = $(this);
+				var num = parseInt(_this.find('.num').html());
+				if(num == 0) return;
+
+				mainId = _this.index();
+				_this.addClass('active').siblings('.give-btn').removeClass('active');
+			});
+			popTaskObj.find('.pop-give-btn').unbind().on('click', function() {
+				// 确认赠送
+			})
+		}
+	});
+});
+
+// 索要
+$('#sendBtn').on('click', function() {
+	var popTaskObj = $('#popSend');
+	popShow({
+		object: popTaskObj,
+		success: function() {
+			var mainId = 0; // 索要冰淇淋id
+			popTaskObj.find('.send-btn').unbind().on('click', function() {
+				// 选择赠送的冰淇淋
+				var _this = $(this);
+
+				mainId = _this.index();
+				_this.addClass('active').siblings('.send-btn').removeClass('active');
+			});
+			popTaskObj.find('.pop-send-btn').unbind().on('click', function() {
+				// 确认索要
+			})
+		}
+	});
+})
+</script>
+</body>
+</html>

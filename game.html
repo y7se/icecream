@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<meta name="Description" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="css/comm.css">
+	<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<div class="wrap">
+	<div id="pageBox" class="page-box">
+		<div class="game-item-top">
+			<p class="num" id="gameFinishAllNum">00</p>
+			<a href="center.html" class="jump-btn-harvest"></a>
+
+			<a href="javascript:" class="share-btn" id="shareBtn"></a>
+			<!-- 绳命值 -->
+			<div class="life-item" id="lifeItem">
+				<i class="active"></i>
+				<i class="active"></i>
+				<i class="active"></i>
+				<i class="active"></i>
+				<i class="active"></i>
+			</div>
+		</div>
+
+		<div class="game-item-center">
+			<canvas id="gameCanvas" class="game-canvas"></canvas>
+		</div>
+
+		<div class="game-item-bottom">
+			<p class="game-num harvest-num" id="gameFinishNum"></p>
+			<p class="game-num coin-num" id="gameCoinNum"></p>
+			<!-- 选择框 -->
+			<div class="game-item" id="gameBaseBox">
+				<a href="javascript:" class="item active">
+					<i class="base base01"></i>
+					<span class="num">0/1</span>
+				</a>
+				<a href="javascript:" class="item">
+					<i class="base base02"></i>
+					<span class="num">0/2</span>
+				</a>
+				<a href="javascript:" class="item">
+					<i class="base base03"></i>
+					<span class="num">0/3</span>
+				</a>
+				<a href="javascript:" class="item">
+					<i class="base base04"></i>
+					<span class="num">0/4</span>
+				</a>
+			</div>
+
+			<a href="javascript:" class="btn-rule" id="btnRule"></a>
+			<a href="javascript:" class="btn-coin" id="btnCoin"></a>
+		</div>
+		<div class="game-start-box anim-show">
+			<a href="javascript:" class="start-btn" id="startBtn"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 弹窗-活动规则 -->
+<div class="pop-mask" id="popRule" style="display: none;">
+	<div class="pop-content pop-type02">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+		<h1 class="pop-rule-title">活动规则</h1>
+		<div class="pop-rule-item">
+			<div class="rule-item">
+				<p>1、活动时间：2018年6月27日10:00-2018年7月15日24:00</p>
+				<p>2、活动奖品</p>
+				
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<th>奖品名称</th>
+						<th>份数</th>
+					</tr>
+					<tr>
+						<td>vivo NEX手机</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>2G流量</td>
+						<td>290</td>
+					</tr>
+					<tr>
+						<td>1G流量</td>
+						<td>700</td>
+					</tr>
+					<tr>
+						<td>300M流量</td>
+						<td>4000</td>
+					</tr>
+					<tr>
+						<td>100M流量</td>
+						<td>25000</td>
+					</tr>
+				</table>
+
+				<p>3、参与规则</p>
+				<p>1、活动期间，用户通过微信图文、关键字、优惠集锦或者10086APP首页轮播图进入活动，射门者进球后可获得进球积分，每人每天在微信和APP各有3局游戏，每局游戏5次射门机会，双渠道共30次射门机会。</p>
+				<p>2、活动期间，抽中暴击道具，进球后积分会有2倍、10倍或50倍暴击1次，仅本局内有效，本局结束后暴击道具自动失效。</p>
+				<p>3、全国排行榜中，当用户积分相同时，按照获取相应分数时间先后顺序排名。</p>
+				<p>4、活动期间，一经发现违规等恶意操作等作弊行为将取消获奖资格。</p>
+				<p>5、活动期间，每位用户只有一次中奖机会；同一手机号、同一微信号算作一个用户。</p>
+				<p>6、活动期间，用户需持续订阅并绑定“中国移动10086”微信公众号，或持续下载并登陆10086APP，否则流量奖品无法发放。</p>
+				<p>7、手机奖品将在活动结束后15个工作日内由10086客服人员电话联系发奖事宜，请您保持电话畅通；若在发奖期间，客服人员拨打三次您仍未能接听电话，或在与客服通话时，您拒绝提供邮寄信息或表示放弃，则默认为您放弃该奖品。</p>
+				<p>8、活动期间，流量奖品将将于8月23日前直接赠送至您绑定/注册的手机号上，届时会有短信，如若8月23日后未收到流量到账提醒短信，请不要着急，我们会在9月1日开始的10个工作日内为您补充入绑定/注册的手机号码中。</p>
+				<p>9、赠送的流量为国内流量（河北、贵州为省内流量），2/3/4G通用，当月有效，流量不结转。</p>
+				<p>10、号码欠费、未进行实名制认证、处于非正常状态的用户，奖品可能无法成功到帐。</p>
+				<p>11、携号转网、集团用户暂时无法参与流量兑换，流量无法到账。</p>
+			</div>
+			<div class="scroll-plan" style="display: none;"><i></i></div>
+		</div>
+
+		<a href="javascript:" class="pop-btn01 pop-hide">好的</a>
+	</div>
+</div>
+
+<!-- 弹窗-扣除和微币提示 -->
+<div class="pop-mask" id="popPrompt01" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">提示</h1>
+		<p class="pop-prompt">你选择的是<span class="title"></span><br>需要扣除<span class="coin"></span>和微币</p>
+
+		<a href="javascript:" class="pop-btn01">确认</a>
+	</div>
+</div>
+
+<!-- 弹窗-做任务赚取和微币 -->
+<div class="pop-mask" id="popCoinTask" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">完成任务即可获得和微币</h1>
+		<div class="pop-task-item">
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+		</div>
+		<p class="pop-task-prompt">每天首次进入“一键检测、话费账单、套餐余额”分别增加以上和微币</p>
+	</div>
+</div>
+
+<!-- 弹窗-制作成功（免费） -->
+<div class="pop-mask" id="popSuccess01" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">制作<span class="title"></span>成功!</h1>
+		<i class="pop-success-icon"></i>
+		<a href="javascript:" class="pop-btn01 pop-btn-continue">继续制作</a>
+	</div>
+</div>
+
+<!-- 弹窗-制作成功（话费和微币） -->
+<div class="pop-mask" id="popSuccess02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">制作<span class="title"></span>成功!</h1>
+		<i class="pop-success-icon"></i>
+		<div class="pop-btn-box">
+			<a href="javascript:" class="pop-btn01 pop-btn-continue fl">继续制作</a>
+			<a href="javascript:" class="pop-btn01 fr">赚和微币</a>	
+		</div>
+		<p class="pop-success-prompt">每天首次进入页面可赚取和微币</p>
+	</div>
+</div>
+
+<!-- 弹窗-制作失败（免费） -->
+<div class="pop-mask" id="popFailure01" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">制作失败，再接再厉哦</h1>
+		<p class="pop-prompt">差一点点就制作成功了，<br>继续努力哦</p>
+		<a href="javascript:" class="pop-btn01 pop-btn-continue">继续制作</a>
+	</div>
+</div>
+
+<!-- 弹窗-制作失败（话费和微币） -->
+<div class="pop-mask" id="popFailure02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">制作失败，再接再厉哦</h1>
+		<p class="pop-prompt">差一点点就制作成功了，<br>继续努力哦</p>
+		<div class="pop-btn-box">
+			<a href="javascript:" class="pop-btn01 pop-btn-continue fl">继续制作</a>
+			<a href="javascript:" class="pop-btn01 fr">赚和微币</a>	
+		</div>
+		<p class="pop-success-prompt">每天首次进入页面可赚取和微币</p>
+	</div>
+</div>
+
+<!-- 弹窗-冰淇淋次数用完 -->
+<div class="pop-mask" id="popPrompt02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">制作冰淇淋机会已用完</h1>
+		<p class="pop-prompt">每日首次将游戏发给朋友可再<br>分别获得四种冰淇淋的制作机会！</p>
+
+		<a href="javascript:" class="pop-btn01 pop-btn-share">叫Ta来玩</a>
+	</div>
+</div>
+
+<!-- 弹窗-今日次数用完（微信） -->
+<div class="pop-mask" id="popPrompt03" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">今天次数已用完</h1>
+		<p class="pop-text01">同时在APP参与该活动，冰淇淋可累加哦！</p>
+		<p class="pop-text02">参与方式：打开10086APP，点击底部轮播图参与</p>
+
+		<a href="javascript:" class="pop-btn01 pop-hide">好的</a>
+	</div>
+</div>
+
+<!-- 弹窗-今日次数用完（APP） -->
+<div class="pop-mask" id="popPrompt04" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">今天次数已用完</h1>
+		<p class="pop-text01">同时在中国移动10086微信公众号参与该活动，冰淇淋可累加哦！</p>
+		<p class="pop-text02">参与方式：关注中国移动10086微信公众号，回复“冰淇淋”参与</p>
+
+		<a href="javascript:" class="pop-btn01 pop-hide">好的</a>
+	</div>
+</div>
+
+<!-- 弹窗-做任务提示 -->
+<div class="pop-mask" id="popTaskOper" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">完成任务后获得本次制作机会</h1>
+		<p class="pop-prompt task-title"></p>
+
+		<a href="javascript:" class="pop-btn01 pop-btn-task">好的</a>
+	</div>
+</div>
+
+<!-- 弹窗-分享提示 -->
+<div class="pop-mask" id="popShare" style="display: none;">
+	<a href="javascript:" class="pop-share pop-hide"></a>
+</div>
+
+<!-- 弹窗-文字提示 -->
+<div class="prompt-box" id="promptBox" style="display: none;">
+	<p></p>
+</div>
+
+<!-- 引导层 -->
+<div class="pop-mask" id="popGuide">
+	<div class="pop-box">
+		<div class="pop-guide-top">
+			<i class="pop-guide-icon01"></i>
+		</div>
+		<div class="pop-guide-center">
+			<i class="pop-guide-icon02"></i>
+		</div>
+		<div class="pop-guide-bottom">
+			<i class="pop-guide-icon03"></i>
+		</div>
+
+		<a href="javascript:" class="pop-guide-btn">我知道了</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://fun.mail.10086.cn/wap/common/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/comm.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+</body>
+</html>

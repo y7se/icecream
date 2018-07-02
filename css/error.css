@@ -1,0 +1,44 @@
+.wrap {
+	background-color: #e5e7e8;
+}
+.error-icon {
+	position: absolute;
+	top: 50%;
+	left: 2.68rem;
+	width: 2.2rem;
+	height: 2.67rem;
+	margin-top: -4.63rem;
+	background: url('../images/error_icon.png') no-repeat;
+	background-size: cover;
+}
+.error-text {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	line-height: .5rem;
+	margin-top: -1.98rem;
+	text-align: center;
+	font-size: .24rem;
+	color: #909090;
+}
+.error-text .main {
+	line-height: 1.2rem;
+	font-size: .4rem;
+	font-weight: bold;
+	color: #676767;
+}
+.error-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3.85rem;
+	height: .9rem;
+	margin-left: -1.93rem;
+	line-height: .9rem;
+	border-radius: .45rem;
+	border: 1px solid #45b9e9;
+	font-size: .36rem;
+	color: #45b9e9;
+	text-align: center;
+}
