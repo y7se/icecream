@@ -103,14 +103,28 @@
 	</div>
 </div>
 
-<!-- 弹窗-做任务赚取和微币 -->
-<div class="pop-mask" id="popCoinTask" style="display: none;">
+<!-- 弹窗-做任务赚取和微币（微信） -->
+<div class="pop-mask" id="popCoinTask01" style="display: none;">
 	<div class="pop-content pop-type01">
 		<a href="javascript:" class="pop-close pop-hide"></a>
 
 		<h1 class="pop-title">完成任务即可获得和微币</h1>
-		<div class="pop-task-item">
+		<div class="pop-task-item task-item01">
 			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+		</div>
+		<p class="pop-task-prompt">每天首次进入“一键检测、话费账单、套餐余额”分别增加以上和微币</p>
+	</div>
+</div>
+<!-- 弹窗-做任务赚取和微币（APP） -->
+<div class="pop-mask" id="popCoinTask02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">完成任务即可获得和微币</h1>
+		<div class="pop-task-item task-item02">
 			<a href="javascript:" class="task-btn"></a>
 			<a href="javascript:" class="task-btn"></a>
 			<a href="javascript:" class="task-btn"></a>
@@ -166,7 +180,7 @@
 	<a href="javascript:" class="pop-share pop-hide"></a>
 </div>
 
-<script type="text/javascript" src="https://fun.mail.10086.cn/wap/common/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/comm.js"></script>
 <script type="text/javascript">
 // 处理滚动
@@ -175,7 +189,7 @@ scrollInit({
 });
 // 赚取和微币
 $('#coinTaskBtn').on('click', function() {
-	var popTaskObj = $('#popCoinTask');
+	var popTaskObj = $('#popCoinTask01');
 	popShow({
 		object: popTaskObj,
 		success: function() {

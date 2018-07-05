@@ -1,11 +1,15 @@
+.page-game {
+	width: 100%;
+	height: 100%;
+	min-height: 13.36rem;
+	background: url('../images/bg_game.jpg') no-repeat;
+	background-size: 100% auto;
+	position: relative;
+}
 .game-item-top {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 2rem;
-	background: url('../images/bg_game_top.jpg') no-repeat center center;
-	background-size: cover;
+	position: relative;
 }
 .game-item-top .num {
 	position: absolute;
@@ -71,14 +75,9 @@
 
 
 .game-item-center {
-	position: absolute;
-	top: 50%;
-	left: 0;
 	width: 100%;
 	height: 6.9rem;
-	margin-top: -4.7rem;
-	background: url('../images/bg_game_center.jpg') no-repeat center center;
-	background-size: cover;
+	position: relative;
 }
 .game-item-center .game-canvas {
 	position: absolute;
@@ -90,13 +89,9 @@
 }
 
 .game-item-bottom {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 	height: 4.48rem;
-	background: url('../images/bg_game_bottom.jpg') no-repeat center center;
-	background-size: cover;
+	position: relative;
 }
 .game-item-bottom .game-num {
 	position: absolute;

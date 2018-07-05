@@ -36,6 +36,7 @@ pageSize({
 		};
 
 		var ratio = pageVaryItems.ratio;
+		var scale = pageVaryItems.scale;
 		var canvasObj = $('#gameCanvas')[0];
 			canvasObj.width = 670 * ratio;
 			canvasObj.height = 596 * ratio;
@@ -288,6 +289,7 @@ pageSize({
 
 			var startArr = {x: 0, y: 0},
 				endArr = {x: 0, y: 0};
+			var sTop = $('.page-scroll')[0].scrollTop;
 			var canvasX = $(canvasObj).offset().left;
 			var canvasY = $(canvasObj).offset().top;
 
@@ -299,9 +301,15 @@ pageSize({
 			$(canvasObj).unbind().on('touchstart', function() {
 				event.preventDefault();
 				var touch = event.touches[0];
-				startArr.x = touch.pageX - canvasX;
-				startArr.y = touch.pageY - canvasY;
+				canvasX = $(canvasObj).offset().left;
+				canvasY = $(canvasObj).offset().top;
+
+				startArr.x = (touch.pageX - canvasX) / scale;
+				startArr.y = (touch.pageY - canvasY) / scale;
+
+				// console.log(startArr.x + ';' + baseItem.x)
 				if(startArr.x >= baseItem.x && startArr.x <= baseItem.x + baseItem.w && startArr.y >= baseItem.y && startArr.y <= baseItem.y + baseItem.h) {
+					console.log(true)
 					moveType = true;
 				}
 			});
@@ -309,8 +317,8 @@ pageSize({
 				event.preventDefault();
 				var touch = event.touches[0];
 				if(moveType) {
-					endArr.x = touch.pageX - canvasX;
-					endArr.y = touch.pageY - canvasY;
+					endArr.x = (touch.pageX - canvasX) / scale;
+					endArr.y = (touch.pageY - canvasY) / scale;
 
 					baseItem.x += endArr.x - startArr.x;
 
@@ -351,7 +359,7 @@ pageSize({
 				} else {
 					barrierNum --;
 				}
-				if(n % 150 == 0) {
+				if(n % 100 == 0) {
 					siteRandom = Math.floor(Math.random() * mainSiteArr.length);
 					mainProbRandom = Math.floor(Math.random() * mainProbArr.length);
 					if(mainProbArr[mainProbRandom]) {
@@ -378,7 +386,7 @@ pageSize({
 				mainType = false;
 				for(var i=0; i<mainArr.length; i++) {
 					(function(n) {
-						mainArr[n].dy += 0.02;
+						mainArr[n].dy += 0.02 * scale;
 						mainArr[n].y += mainArr[n].dy;
 
 						if(mainArr[n].x + mainArr[n].w >= baseItem.x + baseItem.w / 2 && mainArr[n].x <= baseItem.x + baseItem.w / 2 && mainArr[n].y + mainArr[n].h >= baseItem.my && mainArr[n].y + mainArr[n].h * 3  / 4 < baseItem.my) {
@@ -429,6 +437,7 @@ pageSize({
 									object: successPopObj,
 									success: function() {
 										successPopObj.find('.title').html(baseItem.title);
+										successPopObj.find('.pop-success-icon').attr('data-type', baseItem.id);
 										successPopObj.find('.pop-btn-continue').unbind().on('click', function() {
 											successPopObj.hide();
 											gameInit();
@@ -481,7 +490,6 @@ pageSize({
 		// 引导页初始化
 		function guideShow() {
 			var guideObj = $('#popGuide');
-			var scale = pageVaryItems.scale;
 			$('.game-start-box').hide();
 			popShow({
 				object: guideObj,
@@ -497,7 +505,7 @@ pageSize({
 
 		// 做任务赚金币
 		function coinTaskShow() {
-			var popTaskObj = $('#popCoinTask');
+			var popTaskObj = $('#popCoinTask01'); // 显示弹窗 popCoinTask01 微信 popCoinTask02 APP
 			popShow({
 				object: popTaskObj,
 				success: function() {

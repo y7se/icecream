@@ -1,0 +1,80 @@
+.share-portrait {
+	width: 1rem;
+	height: 1rem;
+	margin: 0 auto;
+	margin-top: .58rem;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.share-name {
+	width: 100%;
+	line-height: .7rem;
+	text-align: center;
+	font-size: .24rem;
+	color: #000;
+}
+.share-text {
+	width: 100%;
+	line-height: 1rem;
+	text-align: center;
+	font-size: .46rem;
+	color: #086dbb;
+	font-weight: bold;
+}
+.share-icon {
+	display: block;
+	width: 3.87rem;
+	height: 2.92rem;
+	margin: 0 auto;
+	margin-top: -.4rem;
+}
+.share-icon.icon01 {
+	background: url('../images/share_icon01.png') no-repeat;
+	background-size: cover;
+}
+.share-icon.icon02 {
+	background: url('../images/share_icon02.png') no-repeat;
+	background-size: cover;
+}
+.share-icon.icon03 {
+	background: url('../images/share_icon03.png') no-repeat;
+	background-size: cover;
+}
+.share-icon.icon04 {
+	background: url('../images/share_icon04.png') no-repeat;
+	background-size: cover;
+}
+.share-prompt {
+	width: 100%;
+	line-height: 1rem;
+	text-align: center;
+	font-size: .28rem;
+	color: #086dbb;
+}
+.share-btn-item {
+	width: 6.4rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.share-btn-item .share-btn {
+	display: block;
+	width: 2.93rem;
+	height: 1.25rem;
+	box-sizing: border-box;
+	margin-top: .3rem;
+	padding-top: .14rem;
+	line-height: .78rem;
+	text-align: center;
+	font-size: .36rem;
+	font-weight: bold;
+}
+.share-btn-item .share-btn.btn01 {
+	background: url('../images/share_btn01.png') no-repeat;
+	background-size: cover;
+	color: #011054;
+}
+.share-btn-item .share-btn.btn02 {
+	background: url('../images/share_btn02.png') no-repeat;
+	background-size: cover;
+	color: #520400;
+}

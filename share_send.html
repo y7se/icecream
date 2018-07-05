@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<meta name="Description" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="css/comm.css">
+	<link rel="stylesheet" href="css/share.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="share-portrait"><img src="https://wx.qlogo.cn/mmopen/vi_32/h6fUANhU6SnFReXQYlmhdLDxicwKvLg6r1F8AIBPZTzgMIFyXFOTd9vqoesysKn3zOXrO76ibHkDkia3HObqDrSIA/132" alt=""></div>
+	<p class="share-name">用户昵称</p>
+	<p class="share-text">赠送你1个冰淇淋</p>
+	<i class="share-icon"></i>
+	<p class="share-prompt">集齐1套冰淇淋（4个）即可抽取大奖哦</p>
+
+	<div class="share-btn-item">
+		<a href="javascript:" class="share-btn btn01 fl">收下</a>
+		<a href="game.html" class="share-btn btn02 fr">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-不能领取自己赠送的冰淇淋哦 -->
+<div class="pop-mask" id="popPrompt01" style="display: none;">
+	<div class="pop-content pop-type03">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">不能领取自己赠送的冰淇淋哦</h1>
+
+		<a href="game.html" class="pop-btn02">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-该冰淇淋已被领取 -->
+<div class="pop-mask" id="popPrompt02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">该冰淇淋已被领取</h1>
+		<p class="pop-prompt">该冰淇淋已经被人领取啦，下次再来吧！</p>
+
+		<a href="game.html" class="pop-btn02">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-已收下冰淇淋 -->
+<div class="pop-mask" id="popPrompt03" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">已收下冰淇淋</h1>
+		<p class="pop-prompt">恭喜你，已成功收下该冰淇淋</p>
+
+		<a href="game.html" class="pop-btn02">去制作冰淇淋</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/comm.js"></script>
+</body>
+</html>

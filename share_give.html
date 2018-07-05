@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<meta name="Description" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="css/comm.css">
+	<link rel="stylesheet" href="css/share.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="share-portrait"><img src="https://wx.qlogo.cn/mmopen/vi_32/h6fUANhU6SnFReXQYlmhdLDxicwKvLg6r1F8AIBPZTzgMIFyXFOTd9vqoesysKn3zOXrO76ibHkDkia3HObqDrSIA/132" alt=""></div>
+	<p class="share-name">用户昵称</p>
+	<p class="share-text">向你索要1个冰淇淋</p>
+
+	<i class="share-icon icon01"></i>
+	<i class="share-icon icon02" style="display: none;"></i>
+	<i class="share-icon icon03" style="display: none;"></i>
+	<i class="share-icon icon04" style="display: none;"></i>
+
+	<p class="share-prompt">集齐1套冰淇淋（4个）即可抽取大奖哦</p>
+
+	<div class="share-btn-item">
+		<a href="javascript:" class="share-btn btn01 fl">送给TA</a>
+		<a href="game.html" class="share-btn btn02 fr">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-不能向自己索要冰淇淋哦！ -->
+<div class="pop-mask" id="popPrompt01" style="display: none;">
+	<div class="pop-content pop-type03">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">不能向自己索要冰淇淋哦！</h1>
+
+		<a href="game.html" class="pop-btn02">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-冰淇淋余额不足 -->
+<div class="pop-mask" id="popPrompt02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">冰淇淋余额不足</h1>
+		<p class="pop-prompt">抱歉，您的冰淇淋余额不足，请先制作吧！</p>
+
+		<a href="game.htm" class="pop-btn02">去制作冰淇淋</a>
+	</div>
+</div>
+
+<!-- 弹窗-已赠送 -->
+<div class="pop-mask" id="popPrompt03" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">已赠送</h1>
+		<p class="pop-prompt">已向好友赠送1个冰淇淋，<br>多次点击赠送按钮会多次赠送哦</p>
+
+		<a href="javascript:" class="pop-btn01">好的</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/comm.js"></script>
+</body>
+</html>

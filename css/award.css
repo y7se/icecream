@@ -4,6 +4,7 @@
 	min-height: 13.36rem;
 	background: url('../images/bg_award.jpg') no-repeat center top;
 	background-size: 100% auto;
+	position: relative;
 }
 .page-award .back-btn {
 	position: absolute;

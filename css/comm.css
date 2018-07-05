@@ -105,11 +105,10 @@ img {
 .page-box {
 	position: absolute;
 	top: 0;
-	left: 50%;
-	width: 7.5rem;
+	left: 0;
+	width: 100%;
 	height: 100%;
-	min-height: 13.36rem;
-	margin-left: -3.75rem;
+	overflow: hidden;
 	transform-origin: 50% 0 0;
 	-webkit-transform-origin: 50% 0 0;
 }
@@ -121,6 +120,7 @@ img {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,.7);
+	overflow: hidden;
 	z-index: 100;
 }
 .pop-content {
@@ -200,13 +200,19 @@ img {
 	width: 5.73rem;
 	height: 1.78rem;
 	margin: 0 auto;
-	background: url('../images/pop_task.png') no-repeat;
-	background-size: cover;
 	box-sizing: border-box;
 	padding: .19rem .26rem .3rem .16rem;
 	display: -webkit-box;
 	display: flex;
 	display: -webkit-flex;
+}
+.pop-content .pop-task-item.task-item01 {
+	background: url('../images/pop_task01.png') no-repeat;
+	background-size: cover;
+}
+.pop-content .pop-task-item.task-item02 {
+	background: url('../images/pop_task02.png') no-repeat;
+	background-size: cover;
 }
 .pop-content .pop-task-item .task-btn {
 	display: block;
@@ -227,9 +233,23 @@ img {
 	display: block;
 	width: 100%;
 	height: 2.43rem;
-	background: url('../images/pop_success_icon.png') no-repeat center center;
-	background-size: 3.21rem auto;
 	margin-top: -.5rem;
+}
+.pop-content .pop-success-icon[data-type="0"] {
+	background: url('../images/share_icon01.png') no-repeat center center;
+	background-size: 3.21rem auto;
+}
+.pop-content .pop-success-icon[data-type="1"] {
+	background: url('../images/share_icon02.png') no-repeat center center;
+	background-size: 3.21rem auto;
+}
+.pop-content .pop-success-icon[data-type="2"] {
+	background: url('../images/share_icon03.png') no-repeat center center;
+	background-size: 3.21rem auto;
+}
+.pop-content .pop-success-icon[data-type="3"] {
+	background: url('../images/share_icon04.png') no-repeat center center;
+	background-size: 3.21rem auto;
 }
 .pop-content .pop-success-prompt {
 	width: 100%;
@@ -476,7 +496,7 @@ img {
 }
 .pop-guide-btn {
 	position: absolute;
-	bottom: 1.4rem;
+	top: 4rem;
 	left: 50%;
 	width: 3.2rem;
 	height: .88rem;

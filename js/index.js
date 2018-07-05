@@ -27,15 +27,21 @@ var imgData = [
 	{src: 'images/pop_btn02.png'},
 	{src: 'images/pop_close.png'},
 	{src: 'images/pop_share_icon.png'},
-	{src: 'images/pop_success_icon.png'},
-	{src: 'images/pop_task.png'},
+	{src: 'images/pop_task01.png'},
+	{src: 'images/pop_task02.png'},
 	{src: 'images/guide_icon01.png'},
 	{src: 'images/guide_icon02.png'},
 	{src: 'images/guide_icon03.png'},
 	{src: 'images/bg_award.jpg'},
 	{src: 'images/award_active_btn.png'},
 	{src: 'images/award_btn01.png'},
-	{src: 'images/award_btn02.png'}
+	{src: 'images/award_btn02.png'},
+	{src: 'images/share_btn01.png'},
+	{src: 'images/share_btn02.png'},
+	{src: 'images/share_icon01.png'},
+	{src: 'images/share_icon02.png'},
+	{src: 'images/share_icon03.png'},
+	{src: 'images/share_icon04.png'}
 ];
 imgLoad({
 	data: imgData,

@@ -19,10 +19,10 @@ function pageSize(json) {
 	var parentWidth = parentObj.outerWidth();
 	var parentHeight = parentObj.outerHeight();
 	var scale = 1;
-	if(parentHeight < targetHeight) {
-		scale = parentHeight / targetHeight;
-	}
-	targetObj.css({'transform': 'scale('+ scale +')', '-webkit-transform': 'scale('+ scale +')'});
+	// if(parentHeight < targetHeight) {
+	// 	scale = parentHeight / targetHeight;
+	// }
+	// targetObj.css({'transform': 'scale('+ scale +')', '-webkit-transform': 'scale('+ scale +')'});
 	if(json.success && typeof json.success == 'function') {
 		json.success({
 			scale: scale,

@@ -102,14 +102,28 @@
 </div>
 
 
-<!-- 弹窗-做任务赚取和微币 -->
-<div class="pop-mask" id="popCoinTask" style="display: none;">
+<!-- 弹窗-做任务赚取和微币（微信） -->
+<div class="pop-mask" id="popCoinTask01" style="display: none;">
 	<div class="pop-content pop-type01">
 		<a href="javascript:" class="pop-close pop-hide"></a>
 
 		<h1 class="pop-title">完成任务即可获得和微币</h1>
-		<div class="pop-task-item">
+		<div class="pop-task-item task-item01">
 			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+			<a href="javascript:" class="task-btn"></a>
+		</div>
+		<p class="pop-task-prompt">每天首次进入“一键检测、话费账单、套餐余额”分别增加以上和微币</p>
+	</div>
+</div>
+<!-- 弹窗-做任务赚取和微币（APP） -->
+<div class="pop-mask" id="popCoinTask02" style="display: none;">
+	<div class="pop-content pop-type01">
+		<a href="javascript:" class="pop-close pop-hide"></a>
+
+		<h1 class="pop-title">完成任务即可获得和微币</h1>
+		<div class="pop-task-item task-item02">
 			<a href="javascript:" class="task-btn"></a>
 			<a href="javascript:" class="task-btn"></a>
 			<a href="javascript:" class="task-btn"></a>
@@ -209,7 +223,7 @@
 		<a href="javascript:" class="pop-close pop-hide"></a>
 
 		<h1 class="pop-title">恭喜您，中奖了</h1>
-		<p class="pop-prompt">中奖100M流量</p>
+		<p class="pop-prompt">中奖<span class="prize"></span></p>
 		<p class="pop-award-prompt">奖励发放见活动规则，可通过抽奖页面的<br>“中奖记录”查询</p>
 
 		<a href="javascript:" class="pop-btn01 pop-hide">好的</a>
@@ -217,7 +231,7 @@
 </div>
 
 
-<script type="text/javascript" src="https://fun.mail.10086.cn/wap/common/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/easing.min.js"></script>
 <script type="text/javascript" src="js/comm.js"></script>
 <script type="text/javascript">
@@ -236,7 +250,7 @@ $('#btnRule').unbind().on('click', function() {
 
 // 赚取和微币
 $('#coinTaskBtn').on('click', function() {
-	var popTaskObj = $('#popCoinTask');
+	var popTaskObj = $('#popCoinTask01');
 	popShow({
 		object: popTaskObj,
 		success: function() {
@@ -273,23 +287,62 @@ $('#awardPlayBtn').click(function () {
 
 
 function awardStart() {
+	var awardItem = [
+		{id: 0, title: '100M流量'},
+		{id: 1, title: '300M流量'},
+		{id: 2, title: '1G流量'},
+		{id: 3, title: '2G流量'},
+		{id: 4, title: '京东专享全品类券'},
+		{id: 5, title: '网易考拉1000元组合礼包'},
+		{id: 6, title: 'vivo NEX手机'},
+		{id: 7, title: '拼多多随机现金红包'}
+	]
 	// 开始抽奖
 	var awardItemObj = $('.award-item');
-	var u = 218 / 100 * 30; //盒子的高度
-	var random = '111'; //中奖随机数 
+	var u = 218 / 100; //盒子的高度
+	var random = '022'; //中奖随机数 
 	var _this = $('#awardPlayBtn');
 	if(!_this.hasClass('active')){
 		_this.addClass('active');
-		$(".award-item .item").slots(u, random, function () {
-			_this.removeClass('active'); //还有抽奖机会移除active
+		$(".award-item .item").slots(u, random, 8, function (data) {
+			_this.removeClass('active');
 
-			// 中奖弹窗
-			popShow({
-				object: $('#popAward'),
-				success: function() {
-					// 中奖处理事件
+			var awardType = true;
+			var awardId;
+			console.log(parseInt(data[0]) +','+ parseInt(data[1]) +','+ parseInt(data[2]))
+			for(var i=data.length - 1; i>0; i--) {
+				if(data[i] != data[i-1]) {
+					awardType = false;
+				} else {
+					awardId = parseInt(data[i]);
 				}
-			});
+			}
+
+			console.log(awardType)
+
+			if(awardType) {
+				// 中奖弹窗
+				popShow({
+					object: $('#popAward'),
+					success: function() {
+						// 中奖处理事件
+						for(var i=0; i<awardItem.length; i++) {
+							if(awardId == awardItem[i].id) {
+								$('#popAward .prize').html(awardItem[i].title);
+							}
+						}
+					}
+				});	
+			} else {
+				// 不中奖
+				popShow({
+					object: $('#popNotAward'),
+					success: function() {
+
+					}
+				});	
+			}
+			
 		});
 	}
 }
